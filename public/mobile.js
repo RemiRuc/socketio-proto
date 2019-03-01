@@ -8,14 +8,22 @@ socket.on("getRoom", (data) => {
 })
 
 socket.on("computerDisconnected", () => {
+    document.getElementById('connexion-div').style.display = "block"
+    document.getElementById('questions-div').style.display = "none"
     console.log('computer disconected')
 })
 
+socket.on("mobileConnected", () => {
+    document.getElementById('connexion-div').style.display = "none"
+    document.getElementById('questions-div').style.display = "block"
+})
+
 document.getElementById("form").addEventListener("submit", (event) => {
-    event.preventDefault()
     let code = document.getElementById("code").value
     let i = rooms.indexOf( code )
     if (i > -1) {
-        socket.emit("mobileConnexion", code)
+        socket.emit("askMobileConnexion", code)
     }
+    event.preventDefault()
+    return false
 })

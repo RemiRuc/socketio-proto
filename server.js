@@ -30,12 +30,14 @@ io.sockets.on('connection', function (socket) {
         socket.broadcast.emit('getRoom', {data: computers })
     })
 
-    socket.on('mobileConnexion', (code) => {
+    socket.on('askMobileConnexion', (code) => {
         let i = computers.indexOf( code )
         if (i > -1) {
             if (io.sockets.adapter.rooms[code].length < 2) {
+                console.log(io.sockets.adapter.rooms[code].length)
                 socket.clientId = code
                 socket.join(code)
+                io.sockets.to(code).emit('mobileConnected')
                 console.log('connected')
                 /** TO DO : SEND MESSAGE TO ROOM TO START THE EXP */
             } else {
