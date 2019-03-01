@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desktop</title>
+</head>
+<body>
+    <p id="id">Desktop</p>
+    <script src="http://localhost:1337/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:1337')
+
+        let id = Math.floor(Math.random() * Math.floor(999999))
+
+        /** TO DO : Check if id is unique */
+
+        document.getElementById("id").innerHTML = id
+
+        socket.emit('computerConnexion', {id: id})
+
+        socket.on("mobileDisconnected", () => {
+            console.log('mobile disconected')
+        })
+    </script>
+</body>
+</html>
