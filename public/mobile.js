@@ -16,14 +16,13 @@ socket.on("computerDisconnected", () => {
 socket.on("mobileConnected", () => {
     document.getElementById('connexion-div').style.display = "none"
     document.getElementById('questions-div').style.display = "block"
+    console.log('computer disconected')
 })
 
-document.getElementById("form").addEventListener("submit", (event) => {
+document.getElementById("button").addEventListener("ontouchstart", (event) => {
     let code = document.getElementById("code").value
     let i = rooms.indexOf( code )
     if (i > -1) {
         socket.emit("askMobileConnexion", code)
     }
-    event.preventDefault()
-    return false
 })

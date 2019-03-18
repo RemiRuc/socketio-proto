@@ -9,5 +9,11 @@ document.getElementById("id").innerHTML = id
 socket.emit('computerConnexion', {id: id})
 
 socket.on("mobileDisconnected", () => {
-    console.log('mobile disconected')
+    document.getElementById('connexion-div').style.display = "block"
+    document.getElementById('questions-div').style.display = "none"
+})
+
+socket.on("mobileConnected", () => {
+    document.getElementById('connexion-div').style.display = "none"
+    document.getElementById('questions-div').style.display = "block"
 })

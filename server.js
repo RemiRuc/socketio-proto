@@ -58,6 +58,28 @@ io.sockets.on('connection', function (socket) {
             socket.broadcast.to(socket.clientId).emit('mobileDisconnected')
         }
     })
+
+    socket.on("change_page1", function(chg){
+        io.sockets.to(socket.clientId).emit("change_page1", chg);
+      })
+  
+      socket.on("change_page2", function(){
+        io.sockets.to(socket.clientId).emit("change_page2");
+      })
+  
+      socket.on("change_page3", function(){
+        io.sockets.to(socket.clientId).emit("change_page3");
+      })
+  
+      socket.on("animation", function(data){
+        io.sockets.to(socket.clientId).emit("animation", data);
+      })
+  
+      // Register "image" events, sent by the client
+      socket.on("image", function(msg) {
+        // Broadcast the "image" event to all other clients in the room
+        socket.broadcast.to(socket.clientId).emit("image", msg);
+      });
 });
 
 server.listen(1337)
