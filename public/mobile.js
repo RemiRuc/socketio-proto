@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:1337')
+var socket = io.connect('http://10.137.27.2:1337')
 
 let rooms = []
 
@@ -19,7 +19,7 @@ socket.on("mobileConnected", () => {
     console.log('computer disconected')
 })
 
-document.getElementById("button").addEventListener("ontouchstart", (event) => {
+document.getElementById("code").addEventListener("change", (event) => {
     let code = document.getElementById("code").value
     let i = rooms.indexOf( code )
     if (i > -1) {
