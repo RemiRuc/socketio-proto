@@ -173,14 +173,14 @@ socket.on("change_page2", function () {
   fileReader.onloadend = function (event) {
     // Send an image event to the socket
     var image = event.target.result
-    output.src = image;
+    //output.src = image;
     socket.emit("image", image);
   };
   // Read file
   fileReader.readAsDataURL(file);
 })
 socket.on("image", function (image) {
-  output.src = image;
+  //output.src = image;
 });
 /********** ACTIVATION PAGE 3 *********/
   button3.onclick = function () {
