@@ -16,6 +16,35 @@ h1 {
     width: 100%;
     top: 20%;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+.intro {
+    width: 50%;
+    margin: 0 auto;
+}
+#id {
+    border: 1px solid;
+    padding: 10px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+#connexion-div {
+    position: absolute;
+    width: 100%;
+}
+#questions-div {
+    display: none;
+}
     /********** EXEMPLE 1 **********/
     .test-element {
       height: 100px;
@@ -144,7 +173,6 @@ h1 {
     }
     h1 {
         text-align: center;
-        position: absolute;
         width: 100%;
         top: 20%;
     }
