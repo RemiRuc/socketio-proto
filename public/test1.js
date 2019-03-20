@@ -127,8 +127,8 @@ function update() {
 };
 /** detecte si la ball passe au dessus d'une reponse **/
 function isHover(e) {
-var reponse = '.reponse1'
-return (document.querySelector(reponse + ':hover') === e);
+var reponse = document.querySelector('.reponse1');
+return (document.querySelector('.reponse1:hover') === e);
 }
 var myDiv = document.getElementById('ball');;
 document.addEventListener('mousemove', function checkHover() {
