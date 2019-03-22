@@ -1,6 +1,6 @@
-/********** GESTION DES PAGES **********/
+/********** RECUPERATION DES ELEMENTS **********/
 var accueil = document.getElementById('accueil');
-var pageConnexion = document.getElementById('connexion-div');
+var pageConnexion = document.querySelector('.connexion-div-desktop');
 var commencer = document.querySelector('.commencer');
 var pageTest1 = document.getElementById('page-test1');
 var pageTest2 = document.getElementById('page-test2');
@@ -10,15 +10,10 @@ var button2 = document.getElementById('button_test2');
 var button3 = document.getElementById('button_test3');
 var title1 = document.querySelector('.title1');
 
-// Get DOM elements
 var input = document.getElementById("input");
 var output = document.getElementById("output");
 
-/********** ACTIVATION PAGE CONEXION *********/
-commencer.onclick = function () {
-  pageConnexion.style.display = "block";
-  accueil.style.display = "none"
-}
+
 
 
 /*************************************/
@@ -81,7 +76,12 @@ function update() {
 };
 
 
-/********** ACTIVATION PAGE 1 *********/
+
+
+
+/***********************************************/
+/************** ACTIVATION PAGE 1 **************/
+/***********************************************/
 button1.onclick = function () {
   socket.emit("change_page1");
 }
@@ -118,9 +118,12 @@ socket.on("change_page1", function () {
 });
 
 
-/*************************************/
-/************** TEST 2 **************/
-/***********************************/
+
+
+
+/***********************************************/
+/******************* TEST 2 ********************/
+/***********************************************/
 function startDrag(e) {
   this.ontouchmove = this.onmspointermove = moveDrag;
   this.ontouchend = this.onmspointerup = function () {
@@ -160,7 +163,12 @@ document.ongesturechange = function () {
 }
 
 
-/********** ACTIVATION PAGE 2 *********/
+
+
+
+/***********************************************/
+/************** ACTIVATION PAGE 2 **************/
+/***********************************************/
 button2.onclick = function () {
   socket.emit("change_page2");
 }
