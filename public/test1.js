@@ -165,9 +165,6 @@ document.ongesturechange = function () {
 
 socket.on("test2move", function(data) {
   console.log(data)
-  function map(value, low1, high1, low2, high2) {
-    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
-  }
 
   let x = map(data.x, 0, data.mw-50, 0, window.innerWidth)
   let y = map(data.y, 0, data.mh-50, 0, window.innerHeight)
@@ -175,7 +172,77 @@ socket.on("test2move", function(data) {
   if (y <= 0) y = 0 
   document.getElementById(data.id).style.left = x + 'px';
   document.getElementById(data.id).style.top = y + 'px';
+  updateForm()
 });
+
+function map(value, low1, high1, low2, high2) {
+  return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+}
+
+let scene, renderer, camera, cube
+
+function initPage2(){
+  document.getElementById("circle1").style.left = window.innerWidth/2 + "px"
+  document.getElementById("circle1").style.top = window.innerHeight/2 + "px"
+  document.getElementById("circle2").style.left = (window.innerWidth/2) + 50 + "px"
+  document.getElementById("circle2").style.top = (window.innerHeight/2) + 50 + "px"
+  document.getElementById("circle3").style.left = (window.innerWidth/2) + 100 + "px"
+  document.getElementById("circle3").style.top = (window.innerHeight/2) + 100 + "px"
+
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+  renderer = new THREE.WebGLRenderer({alpha: true});
+  renderer.setClearColor( 0x000000, 0 ); // the default
+  renderer.setSize( window.innerWidth, window.innerHeight );
+  document.getElementById("page-test2").appendChild( renderer.domElement );
+
+  var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+  geometry.verticesNeedUpdate = true
+  var material = new THREE.MeshPhongMaterial( { color: 0x00ff00 } );
+  cube = new THREE.Mesh( geometry, material );
+  scene.add( cube );
+
+  var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+scene.add( light );
+
+var light = new THREE.PointLight( 0xffffff, 1, 100 );
+light.position.set( 50, 50, 50 );
+scene.add( light );
+
+  camera.position.z = 5;
+
+  animate();
+}
+
+function animate() {
+	requestAnimationFrame( animate );
+  renderer.render( scene, camera );
+  
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
+}
+
+function updateForm(){
+  // circle1
+  let x1 = parseInt(document.getElementById("circle1").style.left)
+  let y1 = parseInt(document.getElementById("circle1").style.top)
+  cube.scale.x = map(x1, 0, window.innerWidth, 0, 2)
+  cube.scale.y = map(y1, 0, window.innerHeight, 0, 2)
+
+  // circle2
+  let x2 = parseInt(document.getElementById("circle2").style.left)
+  let y2 = parseInt(document.getElementById("circle2").style.top)
+  cube.material.color.r = map(x2, 0, window.innerWidth, 0, 1)
+  cube.material.color.g = map(y2, 0, window.innerHeight, 0, 1)
+
+  let x3 = parseInt(document.getElementById("circle3").style.left)
+  let y3 = parseInt(document.getElementById("circle3").style.top)
+  let col = x3+y3
+  cube.material.color.g = map(col, 0, window.innerHeight*2, 0, 1)
+  
+  cube.geometry.verticesNeedUpdate = true;
+}
 
 
 
@@ -192,4 +259,6 @@ socket.on("change_page2", function () {
   pageTest1.style.display = "none";
   pageTest3.style.display = "none";
   title1.style.display = "none";
+
+  initPage2()
 });
