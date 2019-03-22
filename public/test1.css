@@ -8,8 +8,6 @@
 
 body {
   background: hsla(241, 95%, 84%);
-  height: 100vh;
-  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -140,9 +138,15 @@ p {
 ******************** PAGE 2 / connexion
 ********************/
 
-#connexion-div {
+.connexion-div-desktop {
   position: absolute;
   top: 32%;
+  justify-content: center;
+}
+
+.connexion-div-mobile {
+  position: absolute;
+  top: 20%;
   justify-content: center;
 }
 
@@ -165,6 +169,17 @@ p {
 
 #questions-div {
   display: none;
+}
+
+.question {
+  position: absolute;
+  top: 32%;
+  width: 100%;
+}
+
+.question h1 {
+  width: 50%;
+  margin: 0 auto;
 }
 
 /********************
@@ -231,7 +246,6 @@ p {
 #mask-terrien {
   font-size: 60px;
   font-weight: 700;
-  font-family: 'Lobster Two', cursive;
   text-align: center;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px 2px 0px rgba(255, 255, 255, 0.3);
   background-image: -webkit-radial-gradient(center 10px, 80px 100px, #111111 50%, brown 51%);
@@ -247,7 +261,6 @@ p {
 #mask-aquaphile {
   font-size: 60px;
   font-weight: 700;
-  font-family: 'Lobster Two', cursive;
   text-align: center;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2), 0px 2px 0px rgba(255, 255, 255, 0.3);
   background-image: -webkit-radial-gradient(center 10px, 80px 100px, #111111 50%, #0099ff 51%);
@@ -272,6 +285,26 @@ p {
     ;
   }
 }
+
+
+
+
+/********************
+******************** PAGE 4 / question 2
+********************/
+
+.charge-img {
+  position: absolute;
+  margin-top: 50%;
+  width: 100%;
+}
+
+.charge-img input {
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
 
 /********************
 ******************** NAVIGATION
