@@ -1,4 +1,4 @@
-var socket = io.connect('http://10.137.27.2:1337')
+var socket = io.connect('http://10.137.27.25:1337')
 
 let rooms = []
 

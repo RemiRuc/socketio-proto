@@ -12,6 +12,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 #page-test1, #page-test2, #page-test3, .connexion-div-desktop {
@@ -106,6 +107,11 @@ section {
 /********************
 ******************** PAGE 4 / question 2
 ********************/
+
+#page-test2{
+  overflow: hidden;
+  height: 100vh;
+}
 
 .test-element {
   height: 100px;

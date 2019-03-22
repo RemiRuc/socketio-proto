@@ -139,6 +139,7 @@ function startDrag(e) {
     var deltaY = currentPos[1] - origin[1];
     this.style.left = (pos[0] + deltaX) + 'px';
     this.style.top = (pos[1] + deltaY) + 'px';
+    socket.emit("test2move", {x:(pos[0] + deltaX), y:(pos[1] + deltaY), id: this.id, mw: window.innerWidth, mh: window.innerHeight})
     return false; // cancels scrolling
   }
   function getCoors(e) {
@@ -161,6 +162,20 @@ var elements = document.querySelectorAll('.test-element');
 document.ongesturechange = function () {
   return false;
 }
+
+socket.on("test2move", function(data) {
+  console.log(data)
+  function map(value, low1, high1, low2, high2) {
+    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+  }
+
+  let x = map(data.x, 0, data.mw-50, 0, window.innerWidth)
+  let y = map(data.y, 0, data.mh-50, 0, window.innerHeight)
+  if (x <= 0 ) x = 0
+  if (y <= 0) y = 0 
+  document.getElementById(data.id).style.left = x + 'px';
+  document.getElementById(data.id).style.top = y + 'px';
+});
 
 
 
