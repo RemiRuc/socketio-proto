@@ -10,6 +10,7 @@ body {
   background: hsla(241, 95%, 84%);
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 #page-test1, #page-test2, #page-test3, .connexion-div-desktop {
@@ -30,7 +31,7 @@ body {
 section {
   text-align: center;
   width: 100%;
-  position: absolute;
+  /*position: absolute;*/
 }
 
 /********************
@@ -178,13 +179,18 @@ p {
 }
 
 .question h1 {
-  width: 50%;
+  width: 80%;
   margin: 0 auto;
 }
 
-/********************
-******************** PAGE 4 / question 2
-********************/
+.title1 {
+  position: absolute;
+}
+
+#page-test2{
+  overflow: hidden;
+  height: 100vh;
+}
 
 .test-element {
   height: 100px;
@@ -238,9 +244,9 @@ p {
 }
 
 .reponses {
-  position: absolute;
   width: 100%;
-  top: 40%;
+  position: absolute;
+  top: 50%;
 }
 
 #mask-terrien {

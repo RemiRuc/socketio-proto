@@ -80,6 +80,10 @@ io.sockets.on('connection', function (socket) {
         // Broadcast the "image" event to all other clients in the room
         socket.broadcast.to(socket.clientId).emit("image", msg);
       });
+
+      socket.on("test2move", function(data) {
+        socket.broadcast.to(socket.clientId).emit("test2move", data);
+      });
 });
 
 server.listen(1337)
