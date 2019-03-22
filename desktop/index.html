@@ -7,17 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Desktop</title>
     <link rel="stylesheet" href="test1.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 </head>
 
 <body onload="init()">
+
+
+  <!-- background color animation -->
   <div class="content content--canvas">
   </div>
-  <section id="accueil">
-    <h1>Bienvenue sur Otium</h1>
-    <p>Blablabla</p>
-    <p class="commencer">Commencer l'expérience</p>
-  </section>
+  <!-- fin background color animation -->
 
+
+
+  <!-- PAGE 1 / accueil -->
+  <section id="accueil">
+    <div>
+        <h1>Bienvenue sur Otium</h1>
+        <p>Lorem Khaled Ipsum is a major key to success. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I’m never giving up, I’m just getting started.</p>
+        <p class="commencer">Commencer l'expérience</p>
+    </div>
+  </section>
+  <!-- FIN PAGE 1 / accuei -->
+
+
+
+  <!-- PAGE 2 / connexion -->
     <section id="connexion-div">
         <div class="intro">
             <h1>Otium Desktop</h1>
@@ -26,74 +41,90 @@
             <p id="id">Desktop</p>
         </div>
     </section>
+  <!-- FIN PAGE 2 / connexion -->
 
+
+
+  <!-- PAGE 3 / question 1 -->
   <section id="questions-div">
       <h1 class="title1">Selectionnez une question</h1>
       
-  <section id="page-test1">
-    <h1>êtes-vous plutôt :</h1>
-    
-    <div class="reponses">
-      <div class="reponse1">
-        <div id="mask-terrien">Terrien</div>
+      <section id="page-test1">
+        <h1>êtes-vous plutôt :</h1>
+        
+        <div class="reponses">
+          <div class="reponse1">
+            <div id="mask-terrien">Terrien</div>
+          </div>
+          <div class="reponse2">
+            <div id="mask-aquaphile">Aquaphile</div>
+          </div>
       </div>
-      <div class="reponse2">
-        <div id="mask-aquaphile">Aquaphile</div>
-      </div>
-  </div>
-  <div id="ball"></div>
-    <!-- <table class="table table-striped table-bordered">
-      <tr>
-        <td>Tilt Left/Right [gamma]</td>
-        <td id="doTiltLR"></td>
-      </tr>
-      <tr>
-        <td>Tilt Front/Back [beta]</td>
-        <td id="doTiltFB"></td>
-      </tr>
-      <tr>
-        <td>Direction [alpha]</td>
-        <td id="doDirection"></td>
-      </tr>
-    </table> -->
+      <div id="ball"></div>
+        <table style="display:none" class="table table-striped table-bordered">
+          <tr>
+            <td>Tilt Left/Right [gamma]</td>
+            <td id="doTiltLR"></td>
+          </tr>
+          <tr>
+            <td>Tilt Front/Back [beta]</td>
+            <td id="doTiltFB"></td>
+          </tr>
+          <tr>
+            <td>Direction [alpha]</td>
+            <td id="doDirection"></td>
+          </tr>
+        </table>
+      </section>
+      <!-- FIN PAGE 3 / question 1 -->
+
+
+
+      <!-- PAGE 4 / question 2 -->
+      <section id="page-test2">
+          <div class="test-element"></div>
+          <div class="test-element"></div>
+          <div class="test-element"></div>
+      </section>
+      <!-- FIN PAGE 4 / question 2 -->
+
+
+
+      <!-- PAGE 5 / question 3 -->
+      <section id="page-test3">
+        <input type="file" id="input">
+        <img src="" id="output" width="100%">
+        <div id="three-container"></div>
+      </section>
+      <!-- FIN PAGE 5 / question 3 -->
+
+      <nav>
+        <ul>
+          <li id="button_test1">Question 1</li>
+          <li id="button_test2">Question 2</li>
+          <li id="button_test3">Question 3</li>
+        </ul>
+      </nav>
+
   </section>
 
-  <section id="page-test2">
-      <div class="test-element"></div>
-      <div class="test-element"></div>
-      <div class="test-element"></div>
-  </section>
 
-
-  <section id="page-test3">
-    <!-- File input and image output -->
-    <input type="file" id="input">
-    <img src="" id="output" width="100%">
-    <div id="three-container"></div>
-  </section>
-
-
-  <nav>
-    <ul>
-      <li id="button_test1">Question 1</li>
-      <li id="button_test2">Question 2</li>
-      <li id="button_test3">Question 3</li>
-    </ul>
-  </nav>
-
-    </section>
-    <script src="http://192.168.43.173:1337/socket.io/socket.io.js"></script>
+    <script src="http://10.137.27.2:1337/socket.io/socket.io.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r75/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/bas.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/OrbitControls-2.js"></script>
 
+    
+    <!-- questions animation links -->
     <script src="desktop.js"></script>
     <script src="test1.js"></script>
     <!-- <script src="test2.js"></script> -->
     <script src="test3.js"></script>
 
+
+    <!-- background color animation links -->
     <script src="js/noise.min.js"></script>
 		<script src="js/util.js"></script>
 		<script src="js/shift.js"></script>

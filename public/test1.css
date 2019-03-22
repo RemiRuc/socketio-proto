@@ -1,3 +1,7 @@
+* {
+  font-family: 'Nunito', sans-serif;
+}
+
 body {
     background: hsla(241, 95%, 84%);
     height: 100vh;
@@ -45,6 +49,45 @@ section {
 #questions-div {
     display: none;
 }
+
+/********** EXEMPLE 1 **********/
+#accueil {
+  position: absolute;
+  top: 32%;
+  display: flex;
+  justify-content: center;
+}
+
+#accueil div {
+  max-width: 750px;
+}
+
+#accueil h1 {
+  font-size: 42px;
+}
+
+#accueil p {
+  font-size: 20px;
+  line-height: 1.6em;
+}
+
+#accueil .commencer {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 42px;
+  transition: all 2s;
+}
+
+#accueil .commencer:hover {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 42px;
+  transition: all s;
+}
+
+
+
     /********** EXEMPLE 1 **********/
     .test-element {
       height: 100px;
