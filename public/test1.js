@@ -195,6 +195,8 @@ function initPage2(){
   renderer = new THREE.WebGLRenderer({alpha: true});
   renderer.setClearColor( 0x000000, 0 ); // the default
   renderer.setSize( window.innerWidth, window.innerHeight );
+  renderer.domElement.style.position = "absolute"
+  renderer.domElement.style.left = "0px"
   document.getElementById("page-test2").appendChild( renderer.domElement );
 
   var geometry = new THREE.BoxGeometry( 1, 1, 1 );
