@@ -1,4 +1,4 @@
-var socket = io.connect('http://10.137.33.21:1337')
+var socket = io.connect('http://192.168.43.173:1337')
 
 let id = Math.floor(Math.random() * Math.floor(999999))
 

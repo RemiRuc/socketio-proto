@@ -1,4 +1,7 @@
 /********** GESTION DES PAGES **********/
+var accueil = document.getElementById('accueil');
+var pageConnexion = document.getElementById('connexion-div');
+var commencer = document.querySelector('.commencer');
 var pageTest1 = document.getElementById('page-test1');
 var pageTest2 = document.getElementById('page-test2');
 var pageTest3 = document.getElementById('page-test3');
@@ -10,6 +13,12 @@ var title1 = document.querySelector('.title1');
 // Get DOM elements
 var input = document.getElementById("input");
 var output = document.getElementById("output");
+
+/********** ACTIVATION PAGE CONEXION *********/
+commencer.onclick = function () {
+  pageConnexion.style.display = "block";
+  accueil.style.display = "none"
+}
 
 
 /*************************************/
