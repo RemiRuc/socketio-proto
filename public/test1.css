@@ -46,15 +46,69 @@ section {
   justify-content: center;
 }
 
-#accueil div {
+.logo {
+  width: 300px;
+  opacity: 0;
+  position: absolute;
+  animation: fonduLogo 6s;
+}
+
+@keyframes fonduLogo {
+  10% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.text-intro-connexion {
   max-width: 750px;
+  color: #434343;
+  margin: 0 auto;
+}
+
+.text-intro {
+  max-width: 750px;
+  opacity: 0;
+  color: #434343;
+  animation-name: fonduIntro;
+  animation-delay: 6s;
+  animation-duration: 6s;
+  animation-fill-mode: forwards; 
+}
+
+@keyframes fonduIntro {
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#accueil .title-logo {
+  font-size: 71px;
+  margin-top: -200px;
+  color: #fff;
+}
+
+.title-connexion {
+  color: #434343;
+  font-size: 42px;
 }
 
 #accueil h1 {
   font-size: 42px;
 }
 
-#accueil p {
+p {
   font-size: 20px;
   line-height: 1.6em;
 }
@@ -74,13 +128,22 @@ section {
   transition: all s;
 }
 
+#code {
+  margin-top: 50px;
+  width: 200px;
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+}
+
 /********************
 ******************** PAGE 2 / connexion
 ********************/
 
 #connexion-div {
   position: absolute;
-  width: 100%;
+  top: 32%;
+  justify-content: center;
 }
 
 .intro {
@@ -90,9 +153,10 @@ section {
 
 #id {
   border: 1px solid;
-  padding: 10px;
+  padding: 10px 15px;
   width: 100px;
   margin: 0 auto;
+  border-radius: 20px;
 }
 
 /********************
